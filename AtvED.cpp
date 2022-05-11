@@ -65,7 +65,31 @@ public:
 		return to_string(this->dia) + "/" +
 			   to_string(this->mes) + "/" +
 			   to_string(this->ano);
+		
+		//Caso "to_string" não funcione, aplique: 
+	
+		/*	
+		stringstream stream;
+		stream << this->dia;
+		string saidaDia;
+		stream >> saidaDia;
+		
+		stringstream stream2;
+		stream2 << this->mes;
+		string saidaMes;
+		stream2 >> saidaMes;
+		
+		
+		stringstream stream3;
+		stream3 << this->ano;
+		string saidaAno;
+		stream3 >> saidaAno;
+		
+		return saidaDia.append("/").append(saidaMes).append("/").append(saidaAno);
+		*/
+		
 	}
+	
 
 	Data* dia_seguinte()
 	{
