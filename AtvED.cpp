@@ -62,23 +62,9 @@ public:
 
 	string getData()
 	{
-		stringstream stream;
-		stream << this->dia;
-		string saidaDia;
-		stream >> saidaDia;
-		
-		stringstream stream2;
-		stream2 << this->mes;
-		string saidaMes;
-		stream2 >> saidaMes;
-		
-		
-		stringstream stream3;
-		stream3 << this->ano;
-		string saidaAno;
-		stream3 >> saidaAno;
-		
-		return saidaDia.append("/").append(saidaMes).append("/").append(saidaAno);
+		return to_string(this->dia) + "/" +
+			   to_string(this->mes) + "/" +
+			   to_string(this->ano);
 	}
 
 	Data* dia_seguinte()
@@ -221,14 +207,14 @@ int main(int argc, char** argv)
 		media += idades[i];
 		if(i == (p - 1)){
 			media /= p;	
-	   	  	cout << "Média dos contatos: " << media << endl;
+	   	  	cout << "MÃ©dia dos contatos: " << media << endl;
 		}
 	}
 	cout << endl;
 	int count = 0;
 	for(int i = 0; i < p; ++i){
 		if(idades[i] > media){
-			cout << "Nome do contato com idade maior que a média: " << contatos[i]->getNome() << endl;
+			cout << "Nome do contato com idade maior que a mÃ©dia: " << contatos[i]->getNome() << endl;
 		}
 		if(idades[i] > 18){
 		    count++;
